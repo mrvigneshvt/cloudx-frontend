@@ -1,0 +1,87 @@
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+}
+
+/* Main Container */
+.results-container {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Title */
+.results-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Grid Layout */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Movie Card */
+.results-card {
+  background: #2c2c2c;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.results-card:hover {
+  transform: scale(1.05);
+}
+
+/* Movie Poster */
+.results-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Movie Info */
+.results-info {
+  padding: 10px;
+}
+
+/* Movie Title */
+.results-movie-title {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Release Year */
+.results-release-year {
+  font-size: 14px;
+  color: var(--muted-text-color);
+}
+
+/* Popularity Icon */
+.results-popularity {
+  margin-top: 5px;
+}
+
+.results-icon {
+  vertical-align: middle;
+}
+
+.results-icon.up {
+  color: #4caf50; /* Green for popular movies */
+}
+
+.results-icon.down {
+  color: #ff5252; /* Red for less popular movies */
+}

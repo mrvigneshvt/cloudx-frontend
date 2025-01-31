@@ -1,0 +1,93 @@
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+}
+
+.stream-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.stream-card {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+  color: var(--text-color);
+}
+
+.stream-header h2 {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.stream-body {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.poster {
+  width: 100px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.movie-details {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.movie-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--muted-text-color);
+}
+
+.stream-footer {
+  margin-top: 20px;
+}
+
+.watch-online-btn,
+.download-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.watch-online-btn:hover,
+.download-btn:hover {
+  background-color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  color: var(--primary-color);
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,25 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  width: 100%; /* Ensure full width */
+}
+
+.current {
+  margin-bottom: 30px;
+  width: 100%; /* Full width */
+}
+
+.current h1 {
+  font-size: 36px;
+  color: #ffb400;
+  margin: 0;
+  padding: 0;
+}
+
+.title-cards {
+  width: 100%; /* Ensure TitleCards spans the full width */
+}

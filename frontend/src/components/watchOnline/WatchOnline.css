@@ -1,0 +1,63 @@
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+  --highlight-color: #ff6700; /* Bright orange */
+}
+
+p {
+  color: var(--text-color);
+}
+.watch-on-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.watch-on-card {
+  display: flex;
+  overflow: hidden;
+
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.watch-on-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.watch-on-play {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #28a745;
+}
+
+.watch-on-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.watch-on-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.watch-on-size {
+  font-size: 14px;
+  color: #6c757d;
+}

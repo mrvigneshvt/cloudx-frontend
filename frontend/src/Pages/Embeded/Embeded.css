@@ -1,0 +1,177 @@
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+  --highlight-color: #ff6700; /* Bright orange */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.embed-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  padding: 2rem;
+}
+
+.embed-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 90%;
+  background: var(--secondary-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.img-container {
+  flex: 1;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.details-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 1.5rem; /* Reduced font size */
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.column-left,
+.column-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-right {
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.thumb {
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+}
+
+.overview {
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--muted-text-color);
+}
+
+.availability {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.availability-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.available {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.available:hover {
+  background-color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  color: var(--primary-color);
+}
+
+.unavailable {
+  background-color: var(--muted-text-color);
+  color: var(--secondary-color);
+}
+
+.info {
+  display: flex;
+  flex-direction: column; /* Ensures rows stack vertically */
+  gap: 15px; /* Adds spacing between rows */
+}
+
+.info-row {
+  display: flex;
+  align-items: center; /* Aligns h1 and h2 vertically */
+  gap: 10px; /* Adds spacing between h1 and h2 */
+}
+
+.info-row h1 {
+  font-size: 20px; /* Adjust font size of h1 */
+  color: #ffb400; /* Matches the primary color */
+  width: 120px; /* Ensures h1 has a fixed width for alignment */
+  margin: 0; /* Remove default margin */
+}
+
+.info-row h2 {
+  font-size: 18px; /* Adjust font size of h2 */
+  color: #ffffff; /* Matches the text color */
+  flex: 1; /* Allows h2 to take up remaining space */
+  margin: 0; /* Remove default margin */
+}
+
+.availability-label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spacing between label and status */
+  margin-bottom: 1rem; /* Adds spacing below the label */
+}
+
+.availability-label h1 {
+  font-size: 20px;
+  color: var(--primary-color); /* Matches primary color for consistency */
+}
+
+.availability-status {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.available-text {
+  color: green; /* Green color for available state */
+}
+
+.unavailable-text {
+  color: grey; /* Grey color for unavailable state */
+}

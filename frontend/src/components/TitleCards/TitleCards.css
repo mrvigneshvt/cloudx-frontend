@@ -1,0 +1,71 @@
+.title-cards {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #2a2a2a; /* Slightly lighter background */
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Elevation */
+}
+
+.title-cards .Title {
+  font-size: 24px;
+  color: #ffb400; /* Gold color */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: left; /* Align title to the left */
+}
+
+.card-list {
+  display: flex;
+  gap: 10px; /* Space between cards */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  max-width: 100%; /* Prevent stretching beyond the container */
+  padding-bottom: 10px; /* Add padding for scrollbar space */
+  scrollbar-width: thin;
+  scrollbar-color: #ffb400 transparent; /* Matches gold palette */
+}
+
+.card-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+  background: #ffb400;
+  border-radius: 4px;
+}
+
+.card {
+  flex: 0 0 120px; /* Fixed width for cards */
+  width: 120px; /* Ensure cards stay the same size */
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 2px solid #ffb400; /* A subtle highlight */
+}
+
+.card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ffffff; /* White text */
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(255, 180, 0, 0.5); /* Golden glow */
+}

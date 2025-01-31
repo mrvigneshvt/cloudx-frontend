@@ -1,0 +1,158 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Root colors and fonts */
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+  --highlight-color: #ff6700; /* Bright orange */
+}
+
+.cont {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+  animation: fadeIn 1.2s ease-in-out; /* Fade in effect */
+}
+
+p {
+  color: var(--text-color);
+  font-weight: 900;
+}
+
+/* Main Container */
+.main-cont {
+  margin-top: 220px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  animation: slideIn 1.5s ease-in-out; /* Slide in effect */
+}
+
+.how-what {
+  color: var(--text-color);
+  left: 20px;
+  font-size: 2.5rem;
+  animation: flipIn 1.5s ease-in-out; /* Flipping animation */
+}
+
+.title-primary,
+.title-secondary {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1.3s ease-in-out; /* Zoom-in animation */
+}
+
+.desc-primary,
+.desc-secondary {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--muted-text-color);
+  animation: fadeIn 2s ease-in-out; /* Smooth fade-in */
+}
+
+/* Button Styling */
+.sub-cont button {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.sub-cont button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.sub-cont {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  animation: bounceIn 1.5s ease-in-out; /* Bounce effect */
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted-text-color);
+  font-size: 0.9rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flipIn {
+  from {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
