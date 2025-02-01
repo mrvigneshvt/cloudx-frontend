@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import WatchOnline from "../../components/watchOnline/WatchOnline";
 import { config } from "../../../config";
+import Footer from "../../components/Footer/Footer";
 
 const Embeded = () => {
   const [apiSuccess, setApiSuccess] = useState(false);
@@ -167,13 +168,14 @@ const Embeded = () => {
               </button>
             </div>
           </div>
+          {showLinks ? (
+            <WatchOnline streamingData={streamData} embedId={id} />
+          ) : (
+            <></>
+          )}
         </div>
-        {showLinks ? (
-          <WatchOnline streamingData={streamData} embedId={id} />
-        ) : (
-          <></>
-        )}
       </div>
+      <Footer />
     </>
   );
 };

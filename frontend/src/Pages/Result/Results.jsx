@@ -5,6 +5,7 @@ import { TrendingUp, TrendingDown } from "lucide-react"; // Icons for popularity
 import "./Results.css"; // Import Vanilla CSS
 import Loader from "../../components/loader/Loader";
 import { config } from "../../../config";
+import Footer from "../../components/Footer/Footer";
 
 const Results = () => {
   const [data, setData] = useState([]);
@@ -96,6 +97,7 @@ const Results = () => {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 };

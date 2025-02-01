@@ -1,5 +1,5 @@
 const baseConfig = {
-  serverIp: /*"http://localhost",*/ "http://109.123.237.36",
+  serverIp: "http://192.168.1.10", //"http://localhost", //"http://109.123.237.36",
   serverPort: 5000,
 };
 

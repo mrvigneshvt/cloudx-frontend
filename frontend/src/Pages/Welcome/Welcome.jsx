@@ -5,6 +5,7 @@ import TitleCards from "../../components/TitleCards/TitleCards";
 import Loader from "../../components/loader/Loader";
 import { useNavigate } from "react-router-dom";
 import { config } from "../../../config";
+import Footer from "../../components/Footer/Footer";
 
 const Test = () => {
   const navigate = useNavigate();
@@ -67,6 +68,7 @@ const Test = () => {
           Category={"movie"}
         />
       </div>
+      <Footer />
     </>
   );
 };

@@ -78,16 +78,36 @@
   color: var(--primary-color);
 }
 
-.popup {
+/* Background blur effect */
+.popup-overlay {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: bold;
+  text-align: center;
+  max-width: 80%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .popup {
+    font-size: 14px;
+    padding: 12px;
+    max-width: 90%;
+  }
 }

@@ -5,6 +5,7 @@ import "./Login.css";
 import "react-phone-input-2/lib/style.css";
 import { config } from "../../../config";
 import { Navigate, useNavigate } from "react-router-dom";
+import Loader from "../../components/loader/Loader";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Login = () => {
   const [otp, setOtp] = useState(""); // To store the OTP
   const [otpSent, setOtpSent] = useState(false); // To toggle OTP input visibility
   const [isLoading, setIsLoading] = useState(false); // To manage API loading state
+  const [isauthenticated, setIsAuthenicated] = useState(false);
 
   // API call to request OTP
   const requestOtp = async (e) => {
@@ -65,9 +67,10 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
+        setIsAuthenicated(true);
         setTimeout(() => {
           navigate("/welcome");
-        }, 3000);
+        }, 2000);
         // Proceed to the next step, e.g., redirecting to a dashboard
       } else {
         alert(data.error || "Invalid OTP");
@@ -90,6 +93,9 @@ const Login = () => {
       await requestOtp(e.target.value);
     }
   };
+  if (isauthenticated) {
+    return <Loader />;
+  }
 
   return (
     <>

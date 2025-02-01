@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import OuterNavbar from "../../components/OuterNavbar/OuterNavbar";
 import { config } from "../../../config";
+import Footer from "../../components/Footer/Footer";
 
 const Stream = () => {
   const { uniqueId, embedId } = useParams();
@@ -74,15 +75,21 @@ const Stream = () => {
 
     getMovieInfo();
   }, [embedId]);
-
   const handleWatchOnline = () => {
     console.log(apiStreamUrl);
     if (apiStreamUrl) {
-      navigator.clipboard.writeText(apiStreamUrl);
+      // Clipboard fallback for mobile
+      const tempInput = document.createElement("input");
+      tempInput.value = apiStreamUrl;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
       setPopupMessage(
-        "Streaming URL Copied! Paste it in the 'Network' section of any video player.\n\nNOTE: Video Cant Play in Browser Due to Browser Limitation Fragmentation"
+        "Streaming URL Copied! Paste it in the 'Network' section of any video player.\n\nNOTE: Video Can't Play in Browser Due to Browser Limitation Fragmentation"
       );
-      setTimeout(() => setPopupMessage(""), 8000);
+      setTimeout(() => setPopupMessage(""), 10000);
     }
   };
 
@@ -134,7 +141,12 @@ const Stream = () => {
         </div>
       </div>
 
-      {popupMessage && <div className="popup">{popupMessage}</div>}
+      {popupMessage && (
+        <div className="popup-overlay">
+          <div className="popup">{popupMessage}</div>
+        </div>
+      )}
+      <Footer />
     </>
   );
 };

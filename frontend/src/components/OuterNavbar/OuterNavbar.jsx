@@ -27,7 +27,12 @@ const OuterNavbar = ({ inLogin, isUser, home }) => {
   return (
     <div className="nav-container">
       {/* Left Section */}
-      <div className="nav-left" onClick={() => navi("/login")}>
+      <div
+        className="nav-left"
+        onClick={() => {
+          isUser ? navi("/welcome") : navi("/home");
+        }}
+      >
         <h1 className="c">Cloud</h1>
         <h1 className="x">X</h1>
       </div>

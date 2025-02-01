@@ -5,75 +5,75 @@
   --muted-text-color: #cccccc; /* Muted grey */
 }
 
-/* Login.css */
+/* Centering the login form */
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
+  height: 100vh;
   background-color: var(--secondary-color);
   padding: 20px;
 }
 
+/* Outer box to hold form */
 .outer-box {
-  height: 450px;
-  width: 550px;
-  padding: 40px;
-  border-radius: 40px;
-}
-.login-box {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  background: var(--secondary-color);
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 800px;
-  max-width: 90%; /* Make responsive */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Login form styling */
+.form-box {
+  width: 100%;
 }
 
 .form-box h1 {
   text-align: center;
   margin-bottom: 20px;
   color: var(--text-color);
+  font-size: 24px;
 }
 
+/* Input group */
 .input-group {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
+/* OTP input field */
 .otp-verify {
-  height: 30px;
+  height: 40px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   box-sizing: border-box;
   font-size: 16px;
 }
 
+/* Input labels */
 .input-group label {
-  display: block;
-  margin-bottom: 5px;
   font-weight: 600;
-  text-decoration-color: white;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
-/* Important: Style the react-phone-input elements */
+/* Phone input styling */
 .react-tel-input {
-  width: 50%; /* Make the overall container take full width */
+  width: 100%;
 }
 
 .react-tel-input .form-control {
-  width: calc(
-    100% - 60px
-  ); /* Adjust width as needed to account for flag and dropdown */
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 5px;
   font-size: 16px;
 }
 
@@ -83,38 +83,59 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-.react-tel-input .selected-flag {
-  padding: 6px;
-}
-
-.react-tel-input .flag-dropdown {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
+/* Submit button */
 button[type="submit"] {
   background-color: var(--primary-color);
   color: white;
-  margin-left: 100px;
-  font-weight: 900;
-  padding: 12px 20px;
+  font-weight: 700;
+  padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  width: 50%;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 button[type="submit"]:hover {
-  color: var(--primary-color);
   background-color: black;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  color: var(--primary-color);
 }
 
 /* Responsive adjustments */
-@media (max-width: 500px) {
-  .login-box {
-    width: 95%;
+@media (max-width: 768px) {
+  .outer-box {
+    max-width: 90%;
     padding: 20px;
+  }
+
+  .form-box h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .outer-box {
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .form-box h1 {
+    font-size: 20px;
+  }
+
+  .otp-verify {
+    height: 35px;
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 10px;
   }
 }

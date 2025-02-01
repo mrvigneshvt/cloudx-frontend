@@ -1,158 +1,148 @@
-/* General reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Root colors and fonts */
+/* Root Colors and Fonts */
 :root {
   --primary-color: #ffb400; /* Yellow-orange */
   --secondary-color: #1c1c1c; /* Dark grey */
   --text-color: #ffffff; /* White */
   --muted-text-color: #cccccc; /* Muted grey */
   --highlight-color: #ff6700; /* Bright orange */
+  --light-grey: #f4f4f4;
+  --border-radius: 10px;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
 }
 
-.cont {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+/* Overall Layout */
+.home {
   background-color: var(--secondary-color);
-  animation: fadeIn 1.2s ease-in-out; /* Fade in effect */
-}
-
-p {
   color: var(--text-color);
-  font-weight: 900;
-}
-
-/* Main Container */
-.main-cont {
-  margin-top: 220px;
-  padding: 20px;
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  text-align: center;
-  animation: slideIn 1.5s ease-in-out; /* Slide in effect */
+  height: 100vh;
+  justify-content: space-between;
 }
 
-.how-what {
-  color: var(--text-color);
-  left: 20px;
-  font-size: 2.5rem;
-  animation: flipIn 1.5s ease-in-out; /* Flipping animation */
+/* Main Content Section */
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 2rem;
 }
 
-.title-primary,
-.title-secondary {
-  font-size: 3rem;
-  color: var(--primary-color);
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  animation: zoomIn 1.3s ease-in-out; /* Zoom-in animation */
+.info-box {
+  background-color: var(--secondary-color);
+  padding: 2.5rem 3rem;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.desc-primary,
-.desc-secondary {
-  font-size: 1.2rem;
-  line-height: 1.8;
+.info-box:hover {
+  box-shadow: 0 12px 30px var(--shadow-dark);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 400;
   color: var(--muted-text-color);
-  animation: fadeIn 2s ease-in-out; /* Smooth fade-in */
+  text-transform: uppercase;
 }
 
-/* Button Styling */
-.sub-cont button {
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 1rem 0;
+  line-height: 1.3;
+  animation: slideIn 1s ease-out;
+}
+
+/* Paragraphs */
+.description {
+  font-size: 1.15rem;
+  color: var(--muted-text-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Button Styles */
+button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.toggle-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.toggle-button:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.get-started-button {
   background-color: var(--highlight-color);
   color: var(--text-color);
-  border: none;
-  padding: 12px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
 }
 
-.sub-cont button:hover {
+.get-started-button:hover {
   background-color: var(--primary-color);
-  transform: scale(1.1); /* Zoom effect on hover */
+  transform: scale(1.05);
 }
 
-.sub-cont {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  animation: bounceIn 1.5s ease-in-out; /* Bounce effect */
-}
-
+/* Footer */
 .footer {
-  padding: 20px;
+  background-color: var(--secondary-color);
   text-align: center;
+  padding: 1.5rem;
   color: var(--muted-text-color);
-  font-size: 0.9rem;
-  animation: fadeIn 2s ease-in-out;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes slideIn {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes flipIn {
-  from {
-    transform: rotateX(-90deg);
-    opacity: 0;
-  }
-  to {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-@keyframes bounceIn {
   0% {
-    transform: translateY(-100px);
     opacity: 0;
-  }
-  60% {
-    transform: translateY(10px);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(-5px);
+    transform: translateX(-20px);
   }
   100% {
-    transform: translateY(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }

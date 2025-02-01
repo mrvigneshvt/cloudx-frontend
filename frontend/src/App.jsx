@@ -10,6 +10,7 @@ import Embeded from "./Pages/Embeded/Embeded";
 import Results from "./Pages/Result/Results";
 import WatchOnline from "./components/watchOnline/WatchOnline";
 import Stream from "./Pages/Stream/Stream";
+import NotFound from "./Pages/Not Found/NotFound";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ function App() {
           path="/watch-online/:embedId/:uniqueId"
           element={<Stream />}
         ></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </Router>
   );

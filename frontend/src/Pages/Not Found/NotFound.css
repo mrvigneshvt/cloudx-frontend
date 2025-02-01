@@ -1,0 +1,87 @@
+:root {
+  --primary-color: #ffb400; /* Yellow-orange */
+  --secondary-color: #1c1c1c; /* Dark grey */
+  --text-color: #ffffff; /* White */
+  --muted-text-color: #cccccc; /* Muted grey */
+}
+
+/* Overall container style */
+.notf-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+}
+
+/* Box style */
+.notf-found-box {
+  background-color: var(--secondary-color);
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary-color);
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Animated text */
+.notf-found-text {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: textAnimation 3s ease-in-out infinite;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+/* Keyframes for text animation */
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Fade in animation for the whole container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Loader style */
+.notf-found-loader {
+  border: 8px solid var(--muted-text-color);
+  border-top: 8px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+  margin: 0 auto;
+}
+
+/* Keyframes for loader spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
