@@ -99,7 +99,7 @@ const Login = () => {
 
   return (
     <>
-      {<OuterNavbar inLogin={true} />}
+      {<OuterNavbar isUser={true} />}
       <div className="container">
         <div className="outer-box">
           <div className="form-box">

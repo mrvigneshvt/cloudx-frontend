@@ -15,6 +15,7 @@ const Test = () => {
   useEffect(() => {
     const fetchApi = async () => {
       try {
+        console.log(config.apiPoint.home);
         const req = await fetch(config.apiPoint.home, {
           method: "GET",
           headers: {

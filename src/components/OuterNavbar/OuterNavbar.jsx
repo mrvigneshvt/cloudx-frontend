@@ -50,24 +50,26 @@ const OuterNavbar = ({ inLogin, isUser, home }) => {
             </span>
             {/* Input Field */}
             {showSearch && (
-              <div className="search-wrapper">
-                <input
-                  className="searchBar"
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={handleSearch}
-                />
-                {/* Results */}
-                {searchQuery && (
-                  <Link
-                    to={`/search/${searchQuery.replaceAll(" ", "_")}`}
-                    className="search-results"
-                  >
-                    <p>Search: "{searchQuery}"</p>
-                  </Link>
-                )}
-              </div>
+              <form onSubmit={() => navi(`/search/${searchQuery}`)}>
+                <div className="search-wrapper">
+                  <input
+                    className="searchBar"
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={handleSearch}
+                  />
+                  {/* Results */}
+                  {searchQuery && (
+                    <Link
+                      to={`/search/${searchQuery.replaceAll(" ", "_")}`}
+                      className="search-results"
+                    >
+                      <p>Search: "{searchQuery}"</p>
+                    </Link>
+                  )}
+                </div>
+              </form>
             )}
           </div>
         )}

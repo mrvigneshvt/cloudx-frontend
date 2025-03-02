@@ -1,5 +1,7 @@
+let development = true;
+
 const baseConfig = {
-  serverIp: "http://109.123.237.36", //"http://192.168.1.10", //"http://localhost",
+  serverIp: development ? "http://localhost" : "http://109.123.237.36", // , //"http://192.168.1.10", //
   serverPort: 5000,
 };
 
