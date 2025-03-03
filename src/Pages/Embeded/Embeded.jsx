@@ -64,6 +64,7 @@ const Embeded = () => {
 
     const fetchFile = async () => {
       try {
+        console.log(apiData);
         console.log("Fetching file for:", apiData.title);
         const cleanFileName =
           apiData.title
@@ -76,6 +77,10 @@ const Embeded = () => {
 
         console.log("Cleaned File Name:", cleanFileName);
 
+        console.log(
+          config.apiPoint.fileAvailable + cleanFileName,
+          "eppppppppp",
+        );
         const req = await fetch(config.apiPoint.fileAvailable + cleanFileName, {
           method: "GET",
           headers: {
@@ -83,6 +88,10 @@ const Embeded = () => {
           },
           credentials: "include",
         });
+
+        console.log(req);
+
+        console.log(req.status);
 
         if (req.status === 401) {
           console.log("UnAuth");

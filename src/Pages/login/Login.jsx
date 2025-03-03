@@ -13,7 +13,7 @@ const Login = () => {
   console.log(
     config.apiPoint.whatsAuth.otp,
     "////",
-    config.apiPoint.whatsAuth.otpVerify
+    config.apiPoint.whatsAuth.otpVerify,
   );
   const [phone, setPhone] = useState(""); // To store the phone number
   const [otp, setOtp] = useState(""); // To store the OTP
@@ -99,7 +99,7 @@ const Login = () => {
 
   return (
     <>
-      {<OuterNavbar isUser={true} />}
+      {<OuterNavbar inLogin={true} />}
       <div className="container">
         <div className="outer-box">
           <div className="form-box">

@@ -24,14 +24,14 @@ const Home = () => {
               <h1 className="section-title">What is</h1>
               <h2 className="main-title">Cloud X</h2>
               <p className="description">
-                Cloud X is a premium streaming platform offering on-demand
-                access to a vast library of films and television. Leveraging a
-                unique transactional model, Cloud X provides a flexible,
-                personalized viewing experience without recurring subscriptions.
-                Users enjoy granular control over their entertainment choices,
-                selecting precisely what they want to watch. This innovative
-                approach delivers a cost-effective and streamlined alternative
-                to traditional streaming services.
+                Cloud X is a web development project created by VigneshVT to
+                showcase and enhance his skills in building modern web
+                applications. Designed as a streaming platform, it demonstrates
+                advanced development techniques while providing on-demand access
+                to a curated library of films and television content. Cloud X
+                does not operate as a commercial service or engage in piracy;
+                its primary purpose is to serve as a portfolio project,
+                highlighting expertise in web development.
               </p>
             </>
           ) : (
@@ -54,7 +54,12 @@ const Home = () => {
             <button onClick={handleWorking} className="toggle-button">
               {!working ? "How it Works" : "What is Cloud X"}
             </button>
-            <button className="get-started-button">Get Started</button>
+            <button
+              onClick={() => navigate("/sigmin")}
+              className="get-started-button"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>

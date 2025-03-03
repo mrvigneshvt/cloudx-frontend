@@ -81,7 +81,11 @@ const OuterNavbar = ({ inLogin, isUser, home }) => {
           Contact
         </p>
         {inLogin ? <p onClick={() => navi("/home")}>Home</p> : <></>}
-        {isUser ? <p onClick={() => handleLogout()}>LOGOUT</p> : <></>}
+        {isUser && !inLogin ? (
+          <p onClick={() => handleLogout()}>LOGOUT</p>
+        ) : (
+          <></>
+        )}
         {home ? <p onClick={() => navi("/signin")}>LogIn</p> : <></>}
       </div>
     </div>

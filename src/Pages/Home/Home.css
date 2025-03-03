@@ -88,6 +88,7 @@
 
 /* Button Styles */
 button {
+  font-weight: bold;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border-radius: var(--border-radius);
@@ -98,21 +99,25 @@ button {
 
 .toggle-button {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: black;
 }
 
 .toggle-button:hover {
-  background-color: var(--highlight-color);
+  background-color: black;
+  color: var(--primary-color);
   transform: scale(1.05);
 }
 
 .get-started-button {
-  background-color: var(--highlight-color);
-  color: var(--text-color);
+  font-weight: bold;
+  background-color: var(--primary-color);
+  color: black;
 }
 
 .get-started-button:hover {
-  background-color: var(--primary-color);
+  background-color: black;
+  color: var(--primary-color);
+
   transform: scale(1.05);
 }
 
