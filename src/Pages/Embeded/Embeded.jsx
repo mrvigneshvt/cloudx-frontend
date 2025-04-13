@@ -141,7 +141,11 @@ const Embeded = () => {
               </div>
               <div className="info-row">
                 <h1>Genres:</h1>
-                <h2>{apiData.genres.map((genre) => genre.name).join(", ")}</h2>
+                <h2>
+                  {!apiData.source
+                    ? apiData.genres.map((genre) => genre.name).join(", ")
+                    : apiData.genre}
+                </h2>
               </div>
               <div className="info-row">
                 <h1>Ratings:</h1>
@@ -177,12 +181,12 @@ const Embeded = () => {
               </button>
             </div>
           </div>
-          {showLinks ? (
-            <WatchOnline streamingData={streamData} embedId={id} />
-          ) : (
-            <></>
-          )}
         </div>
+        {showLinks ? (
+          <WatchOnline streamingData={streamData} embedId={id} />
+        ) : (
+          <></>
+        )}
       </div>
       <Footer />
     </>

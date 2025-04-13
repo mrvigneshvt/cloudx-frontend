@@ -59,7 +59,7 @@ const Results = () => {
   return (
     <>
       <OuterNavbar isUser={true} />
-      <div className="results-container">
+      <div className="results-container ">
         <h1 className="results-title">Search results for: {query}</h1>
 
         {notFound ? (
@@ -71,7 +71,7 @@ const Results = () => {
             {data.map((movie) => (
               <div
                 key={movie.id}
-                className="results-card"
+                className="results-card flex flex-col gap-2 items-center"
                 onClick={() => handleClick(movie.id)}
               >
                 <img
@@ -84,7 +84,7 @@ const Results = () => {
                   <p className="results-release-year">
                     {movie.releaseYear || "N/A"}
                   </p>
-                  <div className="results-popularity">
+                  <div className="results-popularity flex justify-center">
                     {movie.popular ? (
                       <TrendingUp size={18} className="results-icon up" />
                     ) : (

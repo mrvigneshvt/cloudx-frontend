@@ -1,4 +1,4 @@
-export let development = true;
+export let development = false;
 
 const baseConfig = {
   serverIp: development ? "http://localhost" : "http://109.123.237.36", // , //"http://192.168.1.10", //

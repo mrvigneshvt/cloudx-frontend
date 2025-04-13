@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./TitleCards.css";
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,9 @@ const TitleCards = ({ Title, Category, apiData }) => {
     };
   }, []);
 
+  const unAvailable = "https://i.ibb.co/Y7rfghSy/Not-found.webp";
+  //console.log(apiData[0]);
+
   return (
     <div className="title-cards">
       <h2 className="Title">{Title}</h2>
@@ -35,7 +38,10 @@ const TitleCards = ({ Title, Category, apiData }) => {
               className="card"
               key={i}
             >
-              <img src={card.poster} alt="img"></img>
+              <img
+                src={card.poster.endsWith("null") ? unAvailable : card.poster}
+                alt="img"
+              ></img>
               <p>{card.title}</p>
             </Link>
           );

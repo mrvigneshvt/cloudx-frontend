@@ -111,14 +111,14 @@ const Login = () => {
                   country={"in"}
                   value={phone}
                   onChange={setPhone} // Update phone state
-                  inputStyle={{ width: "100%" }}
+                  inputStyle={{ width: "100%", color: "black" }}
                   placeholder="Enter WhatsApp Number"
                   id="phone"
                 />
                 {otpSent && (
                   <input
                     placeholder="Enter The OTP"
-                    className="otp-verify"
+                    className="otp-verify bg-white text-black"
                     type="number"
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)} // Update OTP state
